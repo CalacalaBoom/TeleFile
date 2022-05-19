@@ -1,0 +1,50 @@
+﻿<Window x:Class="TeleFileServer.Views.GoodsManagerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeleFileServer.Views"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="GoodsManagerView" Height="500" Width="800">
+    <Grid>
+        <Image x:Name="photo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="150" Margin="50,50,0,0" />
+        <Button x:Name="select" Style="{StaticResource MaterialDesignPaperSecondaryButton}" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,228,0,0" Content="选择图片" Cursor="Hand" Click="select_Click"/>
+
+        <TextBlock Text="商品名" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,22,0,0" />
+        <TextBlock Text="介绍" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,69,0,0" />
+
+        <TextBlock Text="商品类别" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="226,182,0,0" />
+
+        <TextBlock Text="购买量" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,232,0,0" />
+
+        <TextBlock Text="价格" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,282,0,0" />
+
+        <TextBlock Text="路径" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,328,0,0" />
+
+
+        <TextBox Name="GoodName" Width="200" Height="40" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" Margin="0,10,0,0" FontSize="30" Padding="0,0,0,0" />
+        <TextBox Name="Introduce" Width="200" Height="100" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" Margin="0,60,0,0" FontSize="30" Padding="0,0,0,0" />
+
+        <ComboBox
+            Height="40"
+            x:Name="kofgComboBox"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            materialDesign:HintAssist.Hint="商品类别"
+            ItemsSource="{Binding kind}"
+            Width="150" VerticalAlignment="Top" Margin="300,170,0,0" 
+            VerticalContentAlignment="Center" Padding="0,0,0,0" FontSize="30" 
+            HorizontalAlignment="Left" />
+
+        <TextBox Name="CountOfBuyed" Width="200" Height="40" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" Margin="0,220,0,0" FontSize="30" Padding="0,0,0,0" />
+        <TextBox Name="Price" Width="100" Height="40" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" Margin="0,270,100,0" FontSize="30" Padding="0,0,0,0" />
+        <TextBox Name="Path" Width="200" Height="40" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" Margin="0,320,0,0" FontSize="30" Padding="0,0,0,0" Cursor="Arrow" />
+
+
+
+        <Button Name="Select" Style="{StaticResource MaterialDesignPaperSecondaryButton}"  Content="选择文件" Width="80" Height="30" Margin="300,376,400,0" VerticalAlignment="Top" Click="Select_Click_1" Padding="0,0,0,0" Cursor="Hand"/>
+
+        <Button x:Name="OP" Style="{StaticResource MaterialDesignPaperSecondaryButton}" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="669,396,0,0" Content="{Binding GoodOp}" Cursor="Hand" Click="OP_Click"/>
+        <TextBlock Text="元" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="415,282,0,0" />
+    </Grid>
+</Window>

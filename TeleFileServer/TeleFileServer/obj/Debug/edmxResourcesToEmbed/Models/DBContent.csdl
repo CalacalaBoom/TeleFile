@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_TELEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TB_Admin">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Jurisdiction" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DB_TELEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_Admin" EntityType="Self.TB_Admin" />
+    <EntitySet Name="TB_Goods" EntityType="DB_TELEModel.TB_Goods" />
+    <EntitySet Name="TB_Order" EntityType="DB_TELEModel.TB_Order" />
+    <EntitySet Name="TB_Broad" EntityType="DB_TELEModel.TB_Broad" />
+    <EntitySet Name="TB_POST" EntityType="DB_TELEModel.TB_POST" />
+    <EntitySet Name="TB_USER" EntityType="DB_TELEModel.TB_USER" />
+    <EntitySet Name="TB_RECOMMEND" EntityType="DB_TELEModel.TB_RECOMMEND" />
+  </EntityContainer>
+  <EntityType Name="TB_Goods">
+    <Key>
+      <PropertyRef Name="GoodsID" />
+    </Key>
+    <Property Name="GoodsID" Type="Int32" Nullable="false" />
+    <Property Name="Photo" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Introduce" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NumofKind" Type="Int32" Nullable="false" />
+    <Property Name="CountOfBuyed" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TB_Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="GoodsID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_Broad">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BroadContent" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="BroadTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TB_POST">
+    <Key>
+      <PropertyRef Name="Postid" />
+    </Key>
+    <Property Name="Postid" Type="Int32" Nullable="false" />
+    <Property Name="Blockid" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Postcontent" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="Cover" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Recommendid" Type="Int32" Nullable="false" />
+    <Property Name="Lable" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Examineid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_USER">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Nickname" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Region" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Sex" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="Signature" Type="String" Nullable="false" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="Photo" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TB_RECOMMEND">
+    <Key>
+      <PropertyRef Name="Recommendid" />
+    </Key>
+    <Property Name="Recommendid" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Recommender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Postid" Type="Int32" Nullable="false" />
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

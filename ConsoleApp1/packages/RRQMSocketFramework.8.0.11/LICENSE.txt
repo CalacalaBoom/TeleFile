@@ -1,0 +1,12 @@
+RRQMSocketFramework是RRQMSocket的企业版，其99%功能与RRQMSocket一致。所有版权归作者若汝棋茗所有。
+
+RRQMSocketFramework与RRQMSocket相同功能部分遵循：
+1.使用方面遵循Apache License 2.0，可免费供其他开发者二次开发或（商业）使用。
+
+RRQMSocketFramework与RRQMSocket不相同功能部分遵循：
+1.限时免费测试，测试期间可参与商业使用。
+2.付费使用，购买后还须遵循相关使用协议，详情咨询若汝棋茗。
+
+RRQMSocketFramework程序集源代码不公开开源，需要付费购买。
+
+注：所有能正常使用的功能，均视为免费功能。

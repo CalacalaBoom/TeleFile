@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_TELEModelStoreContainer" CdmEntityContainer="DB_TELEEntities">
+    <EntitySetMapping Name="TB_Admin">
+      <EntityTypeMapping TypeName="DB_TELEModel.TB_Admin">
+        <MappingFragment StoreEntitySet="TB_Admin">
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Jurisdiction" ColumnName="Jurisdiction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Goods">
+      <EntityTypeMapping TypeName="DB_TELEModel.TB_Goods">
+        <MappingFragment StoreEntitySet="TB_Goods">
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="CountOfBuyed" ColumnName="CountOfBuyed" />
+          <ScalarProperty Name="NumofKind" ColumnName="NumofKind" />
+          <ScalarProperty Name="Introduce" ColumnName="Introduce" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Order">
+      <EntityTypeMapping TypeName="DB_TELEModel.TB_Order">
+        <MappingFragment StoreEntitySet="TB_Order">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Broad">
+      <EntityTypeMapping TypeName="DB_TELEModel.TB_Broad">
+        <MappingFragment StoreEntitySet="TB_Broad">
+          <ScalarProperty Name="BroadTitle" ColumnName="BroadTitle" />
+          <ScalarProperty Name="BroadContent" ColumnName="BroadContent" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_POST">
+      <EntityTypeMapping TypeName="DB_TELEModel.TB_POST">
+        <MappingFragment StoreEntitySet="TB_POST">
+          <ScalarProperty Name="Examineid" ColumnName="Examineid" />
+          <ScalarProperty Name="Lable" ColumnName="Lable" />
+          <ScalarProperty Name="Recommendid" ColumnName="Recommendid" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Cover" ColumnName="Cover" />
+          <ScalarProperty Name="Postcontent" ColumnName="Postcontent" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Blockid" ColumnName="Blockid" />
+          <ScalarProperty Name="Postid" ColumnName="Postid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_USER">
+      <EntityTypeMapping TypeName="DB_TELEModel.TB_USER">
+        <MappingFragment StoreEntitySet="TB_USER">
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_RECOMMEND">
+      <EntityTypeMapping TypeName="DB_TELEModel.TB_RECOMMEND">
+        <MappingFragment StoreEntitySet="TB_RECOMMEND">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Postid" ColumnName="Postid" />
+          <ScalarProperty Name="Recommender" ColumnName="Recommender" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Recommendid" ColumnName="Recommendid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

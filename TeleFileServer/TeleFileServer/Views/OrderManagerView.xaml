@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="TeleFileServer.Views.OrderManagerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TeleFileServer.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:pwdHelper="clr-namespace:TeleFileServer.Services"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" 
+             d:DesignHeight="950" d:DesignWidth="1400">
+    <Grid>
+        <Border Background="Transparent" Cursor="Hand">
+            <Border CornerRadius="20" BorderThickness="0">
+                <Border.Background>
+                    <SolidColorBrush Color="White" Opacity="0.9"/>
+                </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="700"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="用户账号：" FontSize="30" Margin="50,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" Text="{Binding UserId}" Grid.Row="0" Width="300" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,44,0,0" FontSize="30" Padding="0,0,0,0" VerticalContentAlignment="Center" Cursor="Arrow"/>
+                    <materialDesign:ColorZone
+                        Grid.Row="0"
+                        Mode="Standard"
+                        CornerRadius="2"
+                        Panel.ZIndex="1"
+                        Margin="600,44,0,0"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth1" HorizontalAlignment="Left" Height="50" Width="250" FontSize="30" VerticalContentAlignment="Center">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+                                    Width="Auto" />
+                                <ColumnDefinition
+                                    Width="*" />
+                                <ColumnDefinition
+                                    Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                x:Name="SerchGood"
+                                Style="{DynamicResource MaterialDesignToolButton}">
+                                <materialDesign:PackIcon
+                                    Kind="Search"
+                                    Opacity=".56" Width="30" Height="30" />
+                            </Button>
+                            <TextBox
+                                Text="{Binding GoodID}"
+                                Grid.Column="1"
+                                Margin="8 0 0 0"
+                                materialDesign:HintAssist.Hint="商品编号"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                BorderThickness="0"
+                                MinWidth="200"
+                                VerticalAlignment="Center" Cursor="Arrow" />
+                        </Grid>
+                    </materialDesign:ColorZone>
+                    <DataGrid Grid.Row="0"   x:Name="dtgdSO"
+                        IsReadOnly="True"
+                        Width="1300" Height="450" 
+                        HorizontalAlignment="Center" VerticalAlignment="Top" 
+                        ItemsSource="{Binding ItemsGoods}" 
+                        CanUserReorderColumns="False" CanUserAddRows="False"
+                        AutoGenerateColumns="False"
+                        HeadersVisibility="All" GridLinesVisibility="All"
+                        SelectedIndex="{Binding slcGD}"
+                        cal:Message.Attach="[Event SelectionChanged]=[Action Slcchanged]" Margin="0,140,0,0">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="FontSize" Value="20"/>
+                                <Setter Property="FontFamily" Value="黑体"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Header="商品编号" Binding="{Binding gid}"/>
+                            <DataGridTextColumn Width="*" Header="商品名" Binding="{Binding name}"/>
+                            <DataGridTextColumn Width="*" Header="商品介绍" Binding="{Binding intro}"/>
+                            <DataGridTextColumn Width="*" Header="商品类型" Binding="{Binding nofk}"/>
+                            <DataGridTextColumn Width="*" Header="购买量" Binding="{Binding cofb}"/>
+                            <DataGridTextColumn Width="*" Header="价格" Binding="{Binding pri}"/>
+                            <DataGridTextColumn Width="*" Header="路径" Binding="{Binding pa}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="AddOrder" Style="{StaticResource MaterialDesignPaperSecondaryLightButton}" Width="300" Height="50" Content="添加订单" Padding="0,0,0,0" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,620,0,0"/>
+                    <TextBlock Grid.Row="0" x:Name="OrderId" Text="{Binding OrderId}" FontSize="30" Margin="400,630,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" />
+
+                    <Button Grid.Row="1" x:Name="AddGood" Style="{StaticResource MaterialDesignPaperSecondaryLightButton}" Width="300" Height="50" Content="添加商品" Padding="0,0,0,0" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="200,0,0,0" Cursor="Hand"/>
+                    <Button Grid.Row="1" x:Name="DeleteGood" Style="{StaticResource MaterialDesignPaperSecondaryLightButton}" Width="300" Height="50" Content="删除商品" Padding="0,0,0,0" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
+                    <Button Grid.Row="1" x:Name="ChangeGood" Style="{StaticResource MaterialDesignPaperSecondaryLightButton}" Width="300" Height="50" Content="修改商品" Padding="0,0,0,0" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="900,0,0,0" Cursor="Hand"/>
+
+                </Grid>
+
+
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>

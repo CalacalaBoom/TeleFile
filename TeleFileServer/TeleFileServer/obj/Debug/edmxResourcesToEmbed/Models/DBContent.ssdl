@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_TELEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_Admin">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Jurisdiction" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_Broad">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="BroadContent" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="BroadTitle" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="TB_Goods">
+    <Key>
+      <PropertyRef Name="GoodsID" />
+    </Key>
+    <Property Name="GoodsID" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="image" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Introduce" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="NumofKind" Type="int" Nullable="false" />
+    <Property Name="CountOfBuyed" Type="int" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Path" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="Userid" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="GoodsID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_POST">
+    <Key>
+      <PropertyRef Name="Postid" />
+    </Key>
+    <Property Name="Postid" Type="int" Nullable="false" />
+    <Property Name="Blockid" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Postcontent" Type="image" Nullable="false" />
+    <Property Name="Cover" Type="image" Nullable="false" />
+    <Property Name="Userid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Recommendid" Type="int" Nullable="false" />
+    <Property Name="Lable" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Examineid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_RECOMMEND">
+    <Key>
+      <PropertyRef Name="Recommendid" />
+    </Key>
+    <Property Name="Recommendid" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Recommender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Postid" Type="int" Nullable="false" />
+    <Property Name="Userid" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_USER">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nickname" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Region" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sex" Type="nchar" MaxLength="4" Nullable="false" />
+    <Property Name="Signature" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="Photo" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DB_TELEModelStoreContainer">
+    <EntitySet Name="TB_Admin" EntityType="Self.TB_Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Broad" EntityType="Self.TB_Broad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Goods" EntityType="Self.TB_Goods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Order" EntityType="Self.TB_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_POST" EntityType="Self.TB_POST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_RECOMMEND" EntityType="Self.TB_RECOMMEND" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_USER" EntityType="Self.TB_USER" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
